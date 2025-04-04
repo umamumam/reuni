@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\Storage;
 
 class KeluargaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $keluargas = Keluarga::all();
+        $query = Keluarga::query();
+        if ($request->has('search') && $request->search != '') {
+            $query->where('nama', 'like', '%' . $request->search . '%');
+        }
+        $keluargas = $query->paginate(10)->withQueryString();
         return view('keluarga.index', compact('keluargas'));
     }
 

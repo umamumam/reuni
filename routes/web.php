@@ -31,9 +31,10 @@ Route::put('petugas/{petugas}', [PetugasController::class, 'update'])->name('pet
 Route::resource('petugas', PetugasController::class);
 Route::resource('santunan', SantunanController::class);
 Route::resource('galeri', GaleriController::class);
-Route::get('geleritahun', [GaleriController::class, 'galeriByYear'])->name('galeri.byYear');
+Route::get('galeritahun', [GaleriController::class, 'galeriByYear'])->name('galeri.byYear');
 // Route::get('silsilah', [KeluargaController::class, 'silsilah'])->name('silsilah');
 Route::get('/silsilah', [KeluargaController::class, 'silsilah'])->name('keluarga.silsilah');
+Route::get('halal_bil_halal/cetak/{id}', [HalalBilHalalController::class, 'cetak'])->name('halal_bil_halal.cetak');
 
 
 require __DIR__.'/auth.php';

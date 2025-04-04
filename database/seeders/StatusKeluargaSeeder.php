@@ -11,9 +11,17 @@ class StatusKeluargaSeeder extends Seeder
     public function run()
     {
         DB::table('status_keluargas')->insert([
+            ['nama' => '-'],
+            ['nama' => 'Pasangan'],
             ['nama' => 'Anak'],
             ['nama' => 'Cucu'],
             ['nama' => 'Cicit'],
+            ['nama' => 'Piut'],
+            ['nama' => 'Bayut'],
+            ['nama' => 'Canggah'],
+            ['nama' => 'Wareng'],
+            ['nama' => 'Udeg-udeg'],
+            ['nama' => 'Gantung siwur'],
         ]);
     }
 }

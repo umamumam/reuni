@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HalalBilHalal;
 use Illuminate\Http\Request;
+use App\Models\HalalBilHalal;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Alkoumi\LaravelHijriDate\Hijri; // Tambahkan ini
 
 class HalalBilHalalController extends Controller
 {
@@ -34,19 +36,32 @@ class HalalBilHalalController extends Controller
             'mauidhoh' => 'nullable|string',
         ]);
 
+        // Konversi tanggal Masehi ke Hijriah
+        $tanggalHijriah = Hijri::Date('j F Y', $request->tanggal);
+
         // Simpan data halal bihalal
-        HalalBilHalal::create($request->all());
+        HalalBilHalal::create([
+            'tanggal' => $request->tanggal,
+            'tanggal_hijriah' => $tanggalHijriah, // Simpan tanggal Hijriah
+            'halal_bihalal_ke' => $request->halal_bihalal_ke,
+            'tempat' => $request->tempat,
+            'mc' => $request->mc,
+            'qori' => $request->qori,
+            'tahlil' => $request->tahlil,
+            'sambutan_panitia' => $request->sambutan_panitia,
+            'sambutan_tuan_rumah' => $request->sambutan_tuan_rumah,
+            'sambutan_bendahara' => $request->sambutan_bendahara,
+            'mauidhoh' => $request->mauidhoh,
+        ]);
 
         return redirect()->route('halal_bil_halal.index')->with('success', 'Halal Bil Halal added successfully');
     }
 
-    // Menampilkan form untuk mengedit data halal bihalal
     public function edit(HalalBilHalal $halalBilHalal)
     {
         return view('halal_bil_halal.edit', compact('halalBilHalal'));
     }
 
-    // Mengupdate data halal bihalal yang ada
     public function update(Request $request, HalalBilHalal $halalBilHalal)
     {
         // Validasi input
@@ -63,19 +78,38 @@ class HalalBilHalalController extends Controller
             'mauidhoh' => 'nullable|string',
         ]);
 
+        // Konversi tanggal Masehi ke Hijriah
+        $tanggalHijriah = Hijri::Date('j F Y', $request->tanggal);
+
         // Update data halal bihalal
-        $halalBilHalal->update($request->all());
+        $halalBilHalal->update([
+            'tanggal' => $request->tanggal,
+            'tanggal_hijriah' => $tanggalHijriah, // Update tanggal Hijriah
+            'halal_bihalal_ke' => $request->halal_bihalal_ke,
+            'tempat' => $request->tempat,
+            'mc' => $request->mc,
+            'qori' => $request->qori,
+            'tahlil' => $request->tahlil,
+            'sambutan_panitia' => $request->sambutan_panitia,
+            'sambutan_tuan_rumah' => $request->sambutan_tuan_rumah,
+            'sambutan_bendahara' => $request->sambutan_bendahara,
+            'mauidhoh' => $request->mauidhoh,
+        ]);
 
         return redirect()->route('halal_bil_halal.index')->with('success', 'Halal Bil Halal updated successfully');
     }
 
-    // Menghapus data halal bihalal
     public function destroy(HalalBilHalal $halalBilHalal)
     {
-        // Hapus data halal bihalal
         $halalBilHalal->delete();
-
         return redirect()->route('halal_bil_halal.index')->with('success', 'Halal Bil Halal deleted successfully');
     }
-}
 
+    public function cetak($id)
+    {
+        $halalBilHalal = HalalBilHalal::findOrFail($id);
+        $pdf = Pdf::loadView('halal_bil_halal.surat_pdf', compact('halalBilHalal'));
+
+        return $pdf->stream('Surat_Halal_Bil_Halal.pdf');
+    }
+}
