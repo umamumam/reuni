@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 
 class GaleriController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $galeris = Galeri::all();
-        return view('galeri.index', compact('galeris'));
+        $tahunList = Galeri::select('tahun')->distinct()->orderBy('tahun', 'desc')->pluck('tahun');
+        $tahunFilter = $request->tahun;
+        $galeris = Galeri::when($tahunFilter, function ($query, $tahunFilter) {
+            return $query->where('tahun', $tahunFilter);
+        })->orderBy('tahun', 'desc')->get();
+        return view('galeri.index', compact('galeris', 'tahunList'));
     }
 
     public function create()

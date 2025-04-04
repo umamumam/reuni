@@ -27,10 +27,17 @@
             </div>
 
             @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Berhasil!",
+                            text: "{{ session('success') }}",
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                    });
+                </script>
             @endif
 
             <div class="table-responsive">
@@ -72,15 +79,16 @@
                                 <a href="{{ route('halal_bil_halal.cetak', $halalBilHalal->id) }}" class="btn btn-primary btn-sm action-btn d-md-none" target="_blank">
                                     <i class="fas fa-print"></i>
                                 </a>
-                                <form action="{{ route('halal_bil_halal.destroy', $halalBilHalal->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                                <button type="button" class="btn btn-danger btn-sm action-btn btn-delete d-none d-md-inline" data-id="{{ $halalBilHalal->id }}">
+                                    <i class="fas fa-trash-alt me-1"></i>Delete
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm action-btn btn-delete d-md-none" data-id="{{ $halalBilHalal->id }}">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+
+                                <form id="delete-form-{{ $halalBilHalal->id }}" action="{{ route('halal_bil_halal.destroy', $halalBilHalal->id) }}" method="POST" class="d-none">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm action-btn d-none d-md-inline">
-                                        <i class="fas fa-trash-alt me-1"></i>Delete
-                                    </button>
-                                    <button type="submit" class="btn btn-danger btn-sm action-btn d-md-none">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
                                 </form>
                             </td>
                         </tr>
@@ -95,4 +103,27 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function() {
+            let id = this.getAttribute('data-id');
+            Swal.fire({
+                title: "Apakah Anda yakin?",
+                text: "Data yang dihapus tidak bisa dikembalikan!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Ya, Hapus!",
+                cancelButtonText: "Batal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(`delete-form-${id}`).submit();
+                }
+            });
+        });
+    });
+</script>
+
 @endsection

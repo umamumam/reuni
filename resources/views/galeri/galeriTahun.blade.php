@@ -3,44 +3,68 @@
 @section('title', 'Daftar Galeri')
 
 @section('content')
-<div class="container">
-    <h1>Galeri</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary fw-bold">Galeri</h1>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <!-- Menampilkan galeri berdasarkan tahun -->
     @php
         $currentYear = null;
+        $counter = 0;
     @endphp
 
-    @foreach($galeris as $galeri)
-        <!-- Cek apakah tahun sekarang berbeda dengan tahun sebelumnya -->
+    @foreach($galeris as $index => $galeri)
         @if($galeri->tahun != $currentYear)
-            @if($currentYear)
-                </div> <!-- Tutup row jika tahun berbeda -->
+            @if($currentYear !== null)
+                </div> <!-- Tutup row sebelumnya -->
+                @if($counter > 8)
+                    <div class="text-center mt-2">
+                        <button class="btn btn-primary btn-sm more-btn" data-target="year-{{ $currentYear }}">More Galeri</button>
+                    </div>
+                @endif
             @endif
-            <!-- Menampilkan tahun baru -->
-            <h3 class="mt-4">Tahun: {{ $galeri->tahun }}</h3>
-            <div class="row">
+            <h3 class="mt-5 fw-bold text-secondary">Tahun: {{ $galeri->tahun }}</h3>
+            <div class="row g-3 year-group" id="year-{{ $galeri->tahun }}">
             @php
                 $currentYear = $galeri->tahun;
+                $counter = 0;
             @endphp
         @endif
-        
-        <!-- Tampilkan Card untuk setiap foto -->
-        <div class="col-md-3 mb-4">
-            <div class="card h-100">
+
+        <div class="col-md-3 gallery-item {{ $counter >= 8 ? 'd-none' : '' }}">
+            <div class="card h-100 shadow-sm">
                 <img src="{{ asset('storage/' . $galeri->foto) }}" class="card-img-top" alt="Foto Galeri">
-                <div class="card-body">
-                    <p class="card-text">Tahun: {{ $galeri->tahun }}</p>
+                <div class="card-body text-center">
+                    <p class="card-text text-muted">Tahun: {{ $galeri->tahun }}</p>
                 </div>
             </div>
         </div>
+
+        @php $counter++; @endphp
     @endforeach
 
-    <!-- Menutup row terakhir jika ada -->
-    </div>
+    @if($counter > 8)
+        </div>
+        <div class="text-center mt-2">
+            <button class="btn btn-primary btn-sm more-btn" data-target="year-{{ $currentYear }}">More Galeri</button>
+        </div>
+    @endif
+
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.more-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                let target = document.getElementById(this.getAttribute('data-target'));
+                target.querySelectorAll('.gallery-item.d-none').forEach(item => {
+                    item.classList.remove('d-none');
+                });
+                this.remove();
+            });
+        });
+    });
+</script>
 @endsection

@@ -14,6 +14,19 @@
 
 </style>
 <div class="container">
+    @if(session('success'))
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil!",
+                    text: "{{ session('success') }}",
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            });
+        </script>
+    @endif
     <div class="card shadow-sm">
         <div class="card-body">
             <h4 class="mb-4 text-primary fw-bold">
@@ -93,17 +106,16 @@
                                 </a>
 
                                 {{-- Tombol Delete --}}
-                                <form action="{{ route('keluarga.destroy', $keluarga->id) }}" method="POST"
-                                    class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                                <button type="button" class="btn btn-danger btn-sm action-btn btn-delete"
+                                    data-id="{{ $keluarga->id }}">
+                                    <i class="fas fa-trash-alt me-1"></i> <span class="d-none d-md-inline">Hapus</span>
+                                </button>
+
+                                <form id="delete-form-{{ $keluarga->id }}"
+                                    action="{{ route('keluarga.destroy', $keluarga->id) }}" method="POST"
+                                    class="d-none">
                                     @csrf
                                     @method('DELETE')
-
-                                    <button type="submit" class="btn btn-danger btn-sm action-btn d-none d-md-inline">
-                                        <i class="fas fa-trash-alt me-1"></i>Delete
-                                    </button>
-                                    <button type="submit" class="btn btn-danger btn-sm action-btn d-md-none">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
                                 </form>
                             </td>
                         </tr>
@@ -128,4 +140,26 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function() {
+            let id = this.getAttribute('data-id');
+            Swal.fire({
+                title: "Apakah Anda yakin?",
+                text: "Data yang dihapus tidak bisa dikembalikan!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Ya, Hapus!",
+                cancelButtonText: "Batal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById(`delete-form-${id}`).submit();
+                }
+            });
+        });
+    });
+</script>
 @endsection
