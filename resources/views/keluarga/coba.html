@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silsilah Keluarga</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .tree {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tree li {
+            position: relative;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tree li::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            width: 1px;
+            height: 20px;
+            background-color: #ccc;
+        }
+
+        .tree li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .tree li > div {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+            width: 150px;
+        }
+
+        .tree li > div:hover {
+            background-color: #45a049;
+        }
+
+        .tree li > div img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .tree > li > ul {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .tree > li > ul > li {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="tree">
+        <li>
+            <div>
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Foto 1">
+                <p>Ayah</p>
+            </div>
+            <ul>
+                <li>
+                    <div>
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Foto 2">
+                        <p>Ibu</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Foto 3">
+                                <p>Nama Anak 1</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Foto 4">
+                                <p>Nama Anak 2</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Foto 5">
+                        <p>Ibu 2</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Foto 6">
+                                <p>Nama Anak 3</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Foto 7">
+                                <p>Nama Anak 4</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Foto 5">
+                        <p>Ibu 2</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Foto 6">
+                                <p>Nama Anak 3</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Foto 7">
+                                <p>Nama Anak 4</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>
