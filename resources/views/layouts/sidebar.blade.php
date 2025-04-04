@@ -112,61 +112,6 @@
                 </li>
             </ul>
         </li>
-
-        {{-- Manajemen User hanya untuk admin --}}
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-shield-keyhole-line"></i>
-                <div data-i18n="Front Pages">Manajemen User</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="/users" class="menu-link">
-                        <div data-i18n="Pricing">Tambah User</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/menus" class="menu-link" target="_blank">
-                        <div data-i18n="Payment">Manajemen Menu</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-header mt-7">
-            <span class="menu-header-text">Apps &amp; Pages</span>
-        </li>
-        {{-- Log Riwayat hanya untuk admin --}}
-        <li class="menu-item">
-            <a href="/logs" class="menu-link">
-                <i class="menu-icon tf-icons ri-box-3-line"></i>
-                <div data-i18n="Email">Log Riwayat</div>
-            </a>
-        </li>
-
-        {{-- Account Settings hanya untuk admin --}}
-        <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-layout-left-line"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="pages-account-settings-account.html" class="menu-link">
-                        <div data-i18n="Account">Account</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="pages-account-settings-notifications.html" class="menu-link">
-                        <div data-i18n="Notifications">Notifications</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="pages-account-settings-connections.html" class="menu-link">
-                        <div data-i18n="Connections">Connections</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
         @endif
     </ul>
 

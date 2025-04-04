@@ -47,7 +47,7 @@
     <div class="container-fluid header position-relative overflow-hidden p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
-                <h1 class="display-6 text-primary m-0"><i class="fas fa-envelope me-3"></i>Mailler</h1>
+                <h1 class="display-6 text-primary m-0"><i class="fas fa-handshake me-3"></i>Reuni</h1>
                 <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -85,10 +85,8 @@
             </div>
             <div class="row gy-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s">Turn Emails into Revenue
-                    </h1>
-                    <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">Win new customers with the #1 email
-                        marketing and automations brand* that recommends ways to get more opens, clicks, and sales.</p>
+                    <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s">Keluarga Besar Mbah Buyut Abd. Jalil - Karmiji</h1>
+                    <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">"Mengikat silaturahmi dan menjaga warisan keluarga dalam kebersamaan yang hangat di momen Halal Bihalal.".</p>
                     <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
                         Started</a>
                 </div>

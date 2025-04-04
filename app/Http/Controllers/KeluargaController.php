@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Keluarga;
 use Illuminate\Http\Request;
 use App\Models\StatusKeluarga;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class KeluargaController extends Controller
@@ -59,7 +60,12 @@ class KeluargaController extends Controller
             'tanggal_meninggal' => $request->tanggal_meninggal,
         ]);
 
-        return redirect()->route('keluarga.index')->with('success', 'Keluarga berhasil ditambahkan');
+        // return redirect()->route('keluarga.index')->with('success', 'Keluarga berhasil ditambahkan');
+        if (Auth::check()) {
+            return redirect()->route('keluarga.index')->with('success', 'Keluarga berhasil ditambahkan');
+        } else {
+            return redirect('/silsilah')->with('warning', 'Silakan login untuk mengakses fitur ini.');
+        }
     }
 
     public function edit(Keluarga $keluarga)
@@ -107,7 +113,12 @@ class KeluargaController extends Controller
             'tanggal_meninggal' => $request->tanggal_meninggal,
         ]);
 
-        return redirect()->route('keluarga.index')->with('success', 'Keluarga berhasil diperbarui.');
+        // return redirect()->route('keluarga.index')->with('success', 'Keluarga berhasil diperbarui.');
+        if (Auth::check()) {
+            return redirect()->route('keluarga.index')->with('success', 'Keluarga berhasil ditambahkan');
+        } else {
+            return redirect('/silsilah')->with('warning', 'Silakan login untuk mengakses fitur ini.');
+        }
     }
 
     public function destroy(Keluarga $keluarga)

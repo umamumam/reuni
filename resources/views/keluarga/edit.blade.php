@@ -1,5 +1,7 @@
-@extends('layouts.layout1')
-
+@extends('layouts.awal')
+@section('title', 'Edit Keluarga')
+@section('hero-title', 'Edit Keluarga')
+@section('breadcrumb', 'Edit Keluarga')
 @section('content')
     <div class="container mt-4">
         <div class="card shadow-lg">
