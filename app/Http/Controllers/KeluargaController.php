@@ -31,7 +31,7 @@ class KeluargaController extends Controller
     {
         $request->validate([
             'nama' => 'required|string|max:255',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,webp,png|max:2048',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,webp,png|max:5048',
             'tanggal_lahir' => 'required|date',
             'alamat' => 'required|string',
             'status_keluarga_id' => 'required|exists:status_keluargas,id',
@@ -80,7 +80,7 @@ class KeluargaController extends Controller
         // Validasi input
         $request->validate([
             'nama' => 'required|string|max:255',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', // Validasi foto
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5048', // Validasi foto
             'tanggal_lahir' => 'required|date',
             'alamat' => 'required|string',
             'status_keluarga_id' => 'required|exists:status_keluargas,id',
