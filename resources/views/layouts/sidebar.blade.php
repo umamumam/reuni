@@ -33,7 +33,7 @@
                     </svg>
                 </span>
             </span>
-            <span class="app-brand-text demo menu-text fw-semibold ms-2" style="font-size: 14px;">Reuni</span>
+            <span class="app-brand-text demo menu-text fw-semibold ms-2" style="font-size: 14px;">Silsilah Keluarga</span>
         </a>
         {{-- <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
             <i class="menu-toggle-icon d-xl-block align-middle"></i>
@@ -82,7 +82,7 @@
         </li>
 
         {{-- Hanya admin yang bisa melihat menu Master Data --}}
-        @if(Auth::user()->role === 'admin')
+        {{-- @if(Auth::user()->role === 'admin')
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ri-layout-2-line"></i>
@@ -112,7 +112,7 @@
                 </li>
             </ul>
         </li>
-        @endif
+        @endif --}}
     </ul>
 
 </aside>

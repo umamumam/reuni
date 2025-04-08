@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Keluarga extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
-        'nama', 'foto', 'tanggal_lahir', 'alamat', 
-        'status_keluarga_id', 'anak_ke', 'keluarga_id', 
-        'status', 'tanggal_meninggal', 'pasangan_id' // DITAMBAHKAN pasangan_id
+        'nama', 'foto', 'tanggal_lahir', 'alamat',
+        'status_keluarga_id', 'anak_ke', 'keluarga_id',
+        'status', 'tanggal_meninggal', 'pasangan_id', 'link_gmap'
     ];
 
     // Relasi ke status keluarga (anak, cucu, cicit, suami, istri, dll.)
@@ -38,7 +38,7 @@ class Keluarga extends Model
     {
         return $this->belongsTo(Keluarga::class, 'pasangan_id');
     }
-    
+
     public function pasanganDari()
     {
         return $this->hasOne(Keluarga::class, 'pasangan_id');

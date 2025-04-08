@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('foto')->nullable();
             $table->date('tanggal_lahir');
             $table->text('alamat');
+            $table->string('link_gmap')->nullable();
             $table->foreignId('status_keluarga_id')->constrained('status_keluargas')->onDelete('cascade');
             $table->integer('anak_ke');
             $table->foreignId('keluarga_id')->nullable()->constrained('keluargas')->onDelete('cascade');
