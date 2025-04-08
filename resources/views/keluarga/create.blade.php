@@ -66,7 +66,7 @@
                                     <li class="orangtua_item">
                                         <a href="javascript:void(0);" class="dropdown-item"
                                             onclick="pilihOrangtua('{{ $keluarga->id }}', '{{ $keluarga->nama }}')">
-                                            {{ $keluarga->nama }}
+                                            {{ $keluarga->nama }} ({{ $keluarga->alamat }})
                                         </a>
                                     </li>
                                 @endforeach

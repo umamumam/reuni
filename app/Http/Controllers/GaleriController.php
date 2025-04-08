@@ -75,4 +75,33 @@ class GaleriController extends Controller
         $galeris = Galeri::orderBy('tahun', 'desc')->get();
         return view('galeri.galeriTahun', compact('galeris'));
     }
+    public function filter(Request $request)
+    {
+        $galeris = Galeri::when($request->tahun, fn($q) => $q->where('tahun', $request->tahun))
+                        ->latest()
+                        ->get();
+
+        $html = '';
+        foreach ($galeris as $index => $galeri) {
+            $delay = '0.' . ($index + 1) . 's';
+            $html .= '
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="' . $delay . '">
+                    <div class="card bg-light rounded shadow-sm h-100">
+                        <img src="' . asset('storage/' . $galeri->foto) . '" class="card-img-top" alt="Foto Keluarga">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Tahun ' . $galeri->tahun . '</h5>
+                        </div>
+                    </div>
+                </div>';
+        }
+
+        if ($galeris->isEmpty()) {
+            $html = '
+                <div class="col-12 text-center">
+                    <p class="text-muted">Tidak ada foto untuk tahun tersebut.</p>
+                </div>';
+        }
+
+        return response()->json(['html' => $html]);
+    }
 }

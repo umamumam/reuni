@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Keluarga;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Models\StatusKeluarga;
 use Illuminate\Support\Facades\Auth;
@@ -22,8 +23,8 @@ class KeluargaController extends Controller
 
     public function create()
     {
-        $statuses = StatusKeluarga::all(); // Untuk dropdown Status Keluarga
-        $keluargas = Keluarga::all(); // Untuk dropdown Orang Tua dan Pasangan
+        $statuses = StatusKeluarga::all();
+        $keluargas = Keluarga::all();
         return view('keluarga.create', compact('statuses', 'keluargas'));
     }
 
@@ -123,7 +124,7 @@ class KeluargaController extends Controller
         if (Auth::check()) {
             return redirect()->route('keluarga.index')->with('success', 'Keluarga berhasil diperbarui.');
         } else {
-            return redirect('/silsilah')->with('warning', 'Silakan login untuk mengakses fitur ini.');
+            return redirect('/silsilah');
         }
     }
 
@@ -146,5 +147,14 @@ class KeluargaController extends Controller
             ->whereNull('keluarga_id') // Ambil hanya root keluarga (tidak punya orang tua)
             ->get();
         return view('keluarga.silsilah', compact('indukKeluarga'));
+    }
+
+    public function exportPdf()
+    {
+        $root = \App\Models\Keluarga::whereNull('keluarga_id')->first(); // Ambil root keluarga
+        $displayedMembers = [];
+        $pdf = PDF::loadView('keluarga.silsilah-pdf', compact('root', 'displayedMembers'))
+                ->setPaper('a4', 'landscape');
+        return $pdf->download('silsilah-keluarga.pdf');
     }
 }

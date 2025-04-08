@@ -47,7 +47,7 @@
     <div class="container-fluid header position-relative overflow-hidden p-0">
         <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
-                <h1 class="display-6 text-primary m-0"><i class="fas fa-handshake me-3"></i>Reuni</h1>
+                <h1 class="display-6 text-primary m-0"><i class="fas fa-sitemap me-3"></i>Silsilah</h1>
                 <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -55,10 +55,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <div class="nav-item dropdown">
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="/keluarga/create" class="nav-item nav-link">Keluarga</a>
+                    <a href="/silsilah" class="nav-item nav-link">Silsilah</a>
+                    {{-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
                             <a href="feature.html" class="dropdown-item">Features</a>
@@ -67,10 +67,11 @@
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             <a href="404.html" class="dropdown-item">404 Page</a>
                         </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    </div> --}}
+                    <a href="/galeritahun" class="nav-item nav-link">Galeri</a>
                 </div>
-                <a href="/login" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log
+                <a href="/login"
+                    class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log
                     In</a>
                 <a href="/register" class="btn btn-primary rounded-pill text-white py-2 px-4">Sign Up</a>
             </div>
@@ -85,13 +86,15 @@
             </div>
             <div class="row gy-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s">Keluarga Besar Mbah Buyut Abd. Jalil - Karmiji</h1>
-                    <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">"Mengikat silaturahmi dan menjaga warisan keluarga dalam kebersamaan yang hangat di momen Halal Bihalal.".</p>
+                    <h1 class="display-4 text-dark mb-4 wow fadeInUp" data-wow-delay="0.3s">Keluarga Besar Mbah Buyut
+                        Abd. Jalil - Karmiji</h1>
+                    <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">"Mengikat silaturahmi dan menjaga warisan
+                        keluarga dalam kebersamaan yang hangat di momen Halal Bihalal.".</p>
                     <a href="#" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Get
                         Started</a>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                    <img src="{{ asset('Mailler/img/hero-img-1.png') }}" class="img-fluid w-100 h-100" alt="">
+                    <img src="{{ asset('gb.png') }}" class="img-fluid w-100 h-100" alt="">
                 </div>
             </div>
         </div>
@@ -106,15 +109,22 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="RotateMoveLeft">
-                        <img src="{{ asset('Mailler/img/about-1.png') }}" class="img-fluid w-100" alt="">
+                        <img src="{{ asset('id.png') }}" class="img-fluid w-100" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h4 class="mb-1 text-primary">About Us</h4>
-                    <h1 class="display-5 mb-4">Get Started Easily With a Personalized Product Tour</h1>
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, suscipit
-                        itaque quaerat dicta porro illum, autem, molestias ut animi ab aspernatur dolorum officia nam
-                        dolore. Voluptatibus aliquam earum labore atque.
+                    <h1 class="display-5 mb-4">Keluarga Besar Mbah Buyut Abd. Jalil - Karmiji</h1>
+                    <p class="mb-4">Website ini dibangun sebagai wadah silaturahmi dan pelestarian silsilah keluarga
+                        besar Mbah Buyut Abd. Jalil & Karmiji.
+                    </p>
+                    <p>
+                        Di tengah perkembangan zaman, kami ingin menghadirkan ruang bersama yang mempererat tali
+                        kekeluargaan, mengenang sejarah, dan mengabadikan warisan leluhur kita.
+                    </p>
+                    <p>
+                        Melalui situs ini, mari kita saling mengenal lebih dekat, menyambung tali persaudaraan, serta
+                        menjaga nilai-nilai luhur yang telah diwariskan turun-temurun.
                     </p>
                     <a href="#" class="btn btn-primary rounded-pill py-3 px-5">About More</a>
                 </div>
@@ -123,135 +133,12 @@
     </div>
     <!-- About End -->
 
-
-    <!-- Service Start -->
-    <div class="container-fluid service py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="mb-1 text-primary">Our Service</h4>
-                <h1 class="display-5 mb-4">What We Can Do For You</h1>
-                <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet
-                    doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores
-                    vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
-                </p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Email Newsletters</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fas fa-thumbs-up fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Acquistion Emails </h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fa fa-subway fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Retention Emails</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fas fa-sitemap fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Promotional Emails</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Email Newsletters</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fas fa-thumbs-up fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Acquistion Emails </h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fa fa-subway fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Retention Emails</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center rounded p-4">
-                        <div class="service-icon d-inline-block bg-light rounded p-4 mb-4"><i
-                                class="fas fa-sitemap fa-5x text-secondary"></i></div>
-                        <div class="service-content">
-                            <h4 class="mb-4">Promotional Emails</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur
-                                adipisicing elit
-                            </p>
-                            <a href="#" class="btn btn-light rounded-pill text-primary py-2 px-4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
-
-
     <!-- Feature Start -->
-    <div class="container-fluid feature overflow-hidden py-5">
+    {{-- <div class="container-fluid feature overflow-hidden py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="text-primary">Our Feature</h4>
-                <h1 class="display-5 mb-4">Important Features For Email Marketing</h1>
+                <h1 class="display-5 mb-4">Informasi Halal Bil Halal</h1>
                 <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet
                     doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores
                     vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
@@ -308,7 +195,7 @@
                 </div>
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="my-3">
-                        <a href="#" class="btn btn-primary d-inline rounded-pill px-5 py-3">More Features</a>
+                        <a href="#" class="btn btn-primary d-inline rounded-pill px-5 py-3">More Info</a>
                     </div>
                 </div>
             </div>
@@ -351,83 +238,55 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Feature End -->
 
 
     <!-- FAQ Start -->
+    @php
+        use App\Models\HalalBilHalal;
+        $dataHBH = HalalBilHalal::orderByDesc('tanggal')->take(3)->get(); // ambil 3 data terbaru
+    @endphp
+
     <div class="container-fluid FAQ bg-light overflow-hidden py-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-4">Informasi Halal Bil Halal</h1>
                     <div class="accordion" id="accordionExample">
+                        @foreach ($dataHBH as $index => $item)
                         <div class="accordion-item border-0 mb-4">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
-                                    Why did you choose Our Email Services?
+                            <h2 class="accordion-header" id="heading{{ $index }}">
+                                <button class="accordion-button {{ $index > 0 ? 'collapsed' : '' }} rounded-top" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse{{ $index }}"
+                                    aria-expanded="{{ $index == 0 ? 'true' : 'false' }}"
+                                    aria-controls="collapse{{ $index }}">
+                                    Halal Bihalal ke-{{ $item->halal_bihalal_ke }} - {{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            <div id="collapse{{ $index }}" class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}"
+                                aria-labelledby="heading{{ $index }}"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body my-2">
-                                    <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit,
-                                        sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum
-                                        consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem
-                                        corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic
-                                        fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
+                                    <p><strong>Tempat:</strong> {{ $item->tempat }}</p>
+                                    @if($item->mc)<p><strong>MC:</strong> {{ $item->mc }}</p>@endif
+                                    @if($item->qori)<p><strong>Qori:</strong> {{ $item->qori }}</p>@endif
+                                    @if($item->tahlil)<p><strong>Tahlil:</strong> {{ $item->tahlil }}</p>@endif
+                                    @if($item->sambutan_panitia)<p><strong>Sambutan Panitia:</strong> {{ $item->sambutan_panitia }}</p>@endif
+                                    @if($item->sambutan_tuan_rumah)<p><strong>Sambutan Tuan Rumah:</strong> {{ $item->sambutan_tuan_rumah }}</p>@endif
+                                    @if($item->sambutan_bendahara)<p><strong>Sambutan Bendahara:</strong> {{ $item->sambutan_bendahara }}</p>@endif
+                                    @if($item->mauidhoh)<p><strong>Mauidhoh:</strong> {{ $item->mauidhoh }}</p>@endif
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item border-0 mb-4">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed rounded-top" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-                                    Are there any hidden charges?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body my-2">
-                                    <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit,
-                                        sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum
-                                        consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem
-                                        corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic
-                                        fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed rounded-top" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
-                                    What are the key challenges of email marketing?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body my-2">
-                                    <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit,
-                                        sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum
-                                        consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem
-                                        corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic
-                                        fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
+
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
                     <div class="FAQ-img RotateMoveRight rounded">
-                        <img src="{{ asset('Mailler/img/about-1.png') }}" class="img-fluid w-100" alt="">
+                        <img src="{{ asset('hbh.png') }}" class="img-fluid w-100" alt="">
                     </div>
                 </div>
             </div>
@@ -437,101 +296,77 @@
 
 
     <!-- Pricing Start -->
+    @php
+        use App\Models\Galeri;
+        $selectedYear = request('tahun');
+        $tahunList = Galeri::select('tahun')->distinct()->orderBy('tahun', 'desc')->pluck('tahun');
+        $galeris = Galeri::when($selectedYear, fn($q) => $q->where('tahun', $selectedYear))->latest()->get();
+    @endphp
     <div class="container-fluid price py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                <h4 class="text-primary">Pricing Plan</h4>
-                <h1 class="display-5 mb-4">Not Sure Which Plan Is For You?</h1>
-                <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet
-                    doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores
-                    vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
+                <h4 class="text-primary">Galeri</h4>
+                <h1 class="display-5 mb-4">Foto Bersama Keluarga</h1>
+                <p class="mb-0">
+                    Setiap momen yang terabadikan dalam foto adalah kenangan indah yang mempererat silaturahmi dan cinta di antara keluarga besar. Tawa, cerita, dan kebersamaan yang tercipta akan selalu menjadi bagian berharga dari perjalanan kita bersama.
                 </p>
             </div>
-            <div class="row g-5 justify-content-center">
-                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="price-item bg-light rounded text-center">
-                        <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4"
-                            style="width: 100%; height: 160px;">
-                            <p class="fs-2 fw-bold text-uppercase mb-0">BASIC</p>
-                            <div class="d-flex justify-content-center">
-                                <strong class="align-self-start">$</strong>
-                                <p class="mb-0"><span class="display-5">00</span>/mo</p>
+
+            <!-- Filter Tahun -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6 text-center">
+                    <form method="GET">
+                        <div class="input-group">
+                            <label class="input-group-text" for="tahun">Filter Tahun</label>
+                            <select name="tahun" id="tahun" class="form-select">
+                            {{-- <select name="tahun" id="tahun" class="form-select" onchange="this.form.submit()"> --}}
+                                <option value="">Semua Tahun</option>
+                                @foreach ($tahunList as $tahun)
+                                    <option value="{{ $tahun }}" {{ $tahun == $selectedYear ? 'selected' : '' }}>
+                                        {{ $tahun }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Galeri -->
+            <div id="galeri" class="row g-5 justify-content-center">
+                @forelse ($galeris as $galeri)
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.{{ $loop->index + 1 }}s">
+                        <div class="card bg-light rounded shadow-sm h-100">
+                            <img src="{{ asset('storage/' . $galeri->foto) }}" class="card-img-top" alt="Foto Keluarga">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-primary">Tahun {{ $galeri->tahun }}</h5>
                             </div>
                         </div>
-                        <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
-                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="price-item bg-light rounded text-center">
-                        <div class="pice-item-offer">Popular</div>
-                        <div class="text-center text-primary border-bottom d-flex flex-column justify-content-center p-4"
-                            style="width: 100%; height: 160px;">
-                            <p class="fs-2 fw-bold text-uppercase mb-0">Standard</p>
-                            <div class="d-flex justify-content-center">
-                                <strong class="align-self-start">$</strong>
-                                <p class="mb-0"><span class="display-5">23</span>/mo</p>
-                            </div>
-                        </div>
-                        <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
-                        </div>
+                @empty
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Tidak ada foto untuk tahun tersebut.</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="price-item bg-light rounded text-center">
-                        <div class="text-center text-secondary border-bottom d-flex flex-column justify-content-center p-4"
-                            style="width: 100%; height: 160px;">
-                            <p class="fs-2 fw-bold text-uppercase mb-0">Premium</p>
-                            <div class="d-flex justify-content-center">
-                                <strong class="align-self-start">$</strong>
-                                <p class="mb-0"><span class="display-5">49</span>/mo</p>
-                            </div>
-                        </div>
-                        <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                            <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#tahun').on('change', function () {
+            const tahun = $(this).val();
+
+            $.get('{{ route('galeri.filter') }}', { tahun: tahun }, function (data) {
+                $('#galeri').html(data.html);
+            });
+        });
+    </script>
+
     <!-- Pricing End -->
 
 
     <!-- Blog Start -->
-    <div class="container-fluid blog py-5">
+    {{-- <div class="container-fluid blog py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="text-primary">Our Blog</h4>
@@ -624,12 +459,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Blog End -->
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid testimonial py-5">
+    {{-- <div class="container-fluid testimonial py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                 <h4 class="text-primary">Testimonial</h4>
@@ -640,7 +475,8 @@
                 </p>
             </div>
             <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
-                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('Mailler/img/testimonial-img-1.jpg') }}' alt=''>">
+                <div class="testimonial-item"
+                    data-dot="<img class='img-fluid' src='{{ asset('Mailler/img/testimonial-img-1.jpg') }}' alt=''>">
                     <div class="testimonial-inner text-center p-5">
                         <div class="d-flex align-items-center justify-content-center mb-4">
                             <div class="testimonial-inner-img border border-primary border-3 me-4"
@@ -668,13 +504,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('Mailler/img/testimonial-img-2.jpg') }}' alt=''>">
+                <div class="testimonial-item"
+                    data-dot="<img class='img-fluid' src='{{ asset('Mailler/img/testimonial-img-2.jpg') }}' alt=''>">
                     <div class="testimonial-inner text-center p-5">
                         <div class="d-flex align-items-center justify-content-center mb-4">
                             <div class="testimonial-inner-img border border-primary border-3 me-4"
                                 style="width: 100px; height: 100px; border-radius: 50%;">
                                 <img src="{{ asset('Mailler/img/testimonial-img-2.jpg') }}"
-                                class="img-fluid rounded-circle" alt="">
+                                    class="img-fluid rounded-circle" alt="">
                             </div>
                             <div>
                                 <h5 class="mb-2">John Abraham</h5>
@@ -696,13 +533,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-item" data-dot="<img class='img-fluid' src='{{ asset('Mailler/img/testimonial-img-3.jpg') }}' alt=''>">
+                <div class="testimonial-item"
+                    data-dot="<img class='img-fluid' src='{{ asset('Mailler/img/testimonial-img-3.jpg') }}' alt=''>">
                     <div class="testimonial-inner text-center p-5">
                         <div class="d-flex align-items-center justify-content-center mb-4">
                             <div class="testimonial-inner-img border border-primary border-3 me-4"
                                 style="width: 100px; height: 100px; border-radius: 50%;">
                                 <img src="{{ asset('Mailler/img/testimonial-img-3.jpg') }}"
-                                class="img-fluid rounded-circle" alt="">
+                                    class="img-fluid rounded-circle" alt="">
                             </div>
                             <div>
                                 <h5 class="mb-2">John Abraham</h5>
@@ -726,7 +564,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Testimonial End -->
 
 
@@ -798,15 +636,14 @@
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-md-0">
-                    <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site
-                            Name</a>, All right reserved.</span>
+                    <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Silsilah Keluarga</a>, All right reserved.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-end text-white">
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                     <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                     <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
                     Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                        class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        class="border-bottom" href="https://themewagon.com">Umam</a>
                 </div>
             </div>
         </div>

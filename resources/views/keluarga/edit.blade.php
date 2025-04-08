@@ -3,6 +3,12 @@
 @section('hero-title', 'Edit Keluarga')
 @section('breadcrumb', 'Edit Keluarga')
 @section('content')
+<style>
+    label.required::after {
+        content: " *";
+        color: red;
+    }
+</style>
     <div class="container mt-4">
         <div class="card shadow-lg">
             <div class="card-header bg-warning text-white">
@@ -15,19 +21,19 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="nama" class="form-label">Nama</label>
+                            <label for="nama" class="form-label required">Nama</label>
                             <input type="text" class="form-control" id="nama" name="nama" value="{{ $keluarga->nama }}" required>
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                            <label for="tanggal_lahir" class="form-label required">Tanggal Lahir</label>
                             <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="{{ $keluarga->tanggal_lahir }}" required>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="status_keluarga_id" class="form-label">Status Keluarga</label>
+                            <label for="status_keluarga_id" class="form-label required">Status Keluarga</label>
                             <select class="form-select" id="status_keluarga_id" name="status_keluarga_id" required>
                                 @foreach($statuses as $status)
                                     <option value="{{ $status->id }}" {{ $status->id == $keluarga->status_keluarga_id ? 'selected' : '' }}>
@@ -38,7 +44,7 @@
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <label for="anak_ke" class="form-label">Anak Ke-</label>
+                            <label for="anak_ke" class="form-label required">Anak Ke-</label>
                             <input type="number" class="form-control" id="anak_ke" name="anak_ke" value="{{ $keluarga->anak_ke }}" required>
                         </div>
                     </div>
@@ -80,7 +86,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="alamat" class="form-label">Alamat</label>
+                        <label for="alamat" class="form-label required">Alamat</label>
                         <textarea class="form-control" id="alamat" name="alamat" rows="3" required>{{ $keluarga->alamat }}</textarea>
                     </div>
                     <div class="mb-3">

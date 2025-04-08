@@ -46,18 +46,17 @@
         <div class="container-fluid p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="display-6 text-primary m-0"><i class="fas fa-envelope me-3"></i>Reuni</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                    <h1 class="display-6 text-primary m-0"><i class="fas fa-sitemap me-3"></i>Silsilah</h1>                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="/" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link active">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <div class="nav-item dropdown">
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="/keluarga/create" class="nav-item nav-link">Keluarga</a>
+                        <a href="/silsilah" class="nav-item nav-link">Silsilah</a>
+                        {{-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
                                 <a href="feature.html" class="dropdown-item">Features</a>
@@ -66,10 +65,10 @@
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                                 <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                        </div> --}}
+                        <a href="/galeritahun" class="nav-item nav-link">Galeri</a>
                     </div>
-                    <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log In</a>
+                    <a href="/login" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log In</a>
                     <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4">Sign Up</a>
                 </div>
             </nav>
@@ -189,13 +188,13 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Silsilah Keluarga</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-white">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">Umam</a>
                     </div>
                 </div>
             </div>
