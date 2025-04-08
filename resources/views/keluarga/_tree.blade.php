@@ -112,6 +112,7 @@
                     @if ($anggota->foto)
                         <img src="{{ asset('storage/' . $anggota->foto) }}" width="50" class="mt-1"><br>
                     @endif
+                    <small>({{ $anggota->alamat }})</small><br>
                 </div>
                 <div class="text-center p-2">
                     <a href="{{ route('keluarga.edit', $anggota->id) }}" class="btn btn-sm btn-primary">Edit</a>
@@ -124,8 +125,9 @@
                         <strong>{{ $pasanganUtama->nama }}</strong><br>
                         <small>{{ optional($pasanganUtama->statusKeluarga)->nama ?? '-' }}</small><br>
                         @if ($pasanganUtama->foto)
-                            <img src="{{ asset('storage/' . $pasanganUtama->foto) }}" width="50" class="mt-1">
+                            <img src="{{ asset('storage/' . $pasanganUtama->foto) }}" width="50" class="mt-1"><br>
                         @endif
+                        <small>({{ $anggota->alamat }})</small><br>
                         <a href="{{ route('keluarga.edit', $pasanganUtama->id) }}" class="btn btn-sm btn-primary mt-2">Edit</a>
                     </div>
                 </div>
