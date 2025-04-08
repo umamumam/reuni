@@ -114,8 +114,9 @@
                     @endif
                     <small>({{ $anggota->alamat }})</small><br>
                 </div>
-                <div class="text-center p-2">
+                <div class="text-center p-2 d-flex justify-content-center gap-1">
                     <a href="{{ route('keluarga.edit', $anggota->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{{ url('/keluarga/create') }}" class="btn btn-sm btn-success">Tambah</a>
                 </div>
             </div>
             @if ($pasanganUtama)
