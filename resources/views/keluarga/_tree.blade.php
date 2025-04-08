@@ -129,7 +129,11 @@
                             <img src="{{ asset('storage/' . $pasanganUtama->foto) }}" width="50" class="mt-1"><br>
                         @endif
                         <small>({{ $anggota->alamat }})</small><br>
-                        <a href="{{ route('keluarga.edit', $pasanganUtama->id) }}" class="btn btn-sm btn-primary mt-2">Edit</a>
+                        <div class="text-center p-2 d-flex justify-content-center gap-1">
+                            <a href="{{ route('keluarga.edit', $pasanganUtama->id) }}"  class="btn btn-sm btn-primary mt-2">Edit</a>
+                            <a href="{{ url('/keluarga/create') }}" class="btn btn-sm btn-success mt-2">Tambah</a>
+                        </div>
+                        {{-- <a href="{{ route('keluarga.edit', $pasanganUtama->id) }}" class="btn btn-sm btn-primary mt-2">Edit</a> --}}
                     </div>
                 </div>
             @endif
